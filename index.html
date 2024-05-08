@@ -4,13 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles.css">
     <title>SARB Random Number Picker</title>
 </head>
 
+<!-- Navigation here -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid p-2">
+        <div class="nav-left">
+            <a href="#" class="navbar-brand">
+                ACT NOW Name Picker
+            </a>
+        </div>
+        <div class="nav-right">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <body>
-    <h1>Welcome, {name}</h1>
-    <form action="GET">
-        <h2>Form body content</h2>
-    </form>
+    <div id="namePicker" class="container-fluid p-3">
+        <div class="row align-items-center">
+            <div class="col-6">
+            <h2>Random Name Picker</h2>
+            <p>Welcome to the Random Name Picker. Follow the instructions below to use:</p>
+            <ol>
+                <li>First, enter a name in the 'Name' field.</li>
+                <li>Then, enter the respective motivation in the 'Motivation' field.</li>
+                <li>Click 'Add Name' to add the name and motivation to the list.</li>
+                <li>Click 'Pick Two Winners' to randomly select two names from the list.</li>
+                <li>Lastly, click 'Refresh List' to clear all names from the list.</li>
+            </ol>
+                <div id="inputArea" class="flex">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="name@example.com" required>
+                        <label for="name">Enter name</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="motivation" placeholder="Add comments" value="Comments" style="height: 100px" required></textarea>
+                        <label for="motivation">Enter motivation</label> <br>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addName()">Add name</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="pickRandom()">Pick name</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div id="nameList" class="list-group">
+
+                </div>
+                <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="refreshList()">Refresh List</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+<footer class="container-fluid bg-body-tertiary p-3">
+    <div class="nav justify-content-end">
+        Created 2024
+    </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
 </html>
