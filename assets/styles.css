@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#inputArea {
+    margin-bottom: 10px;
+}
+#nameList {
+    margin-top: 20px;
+}
+#namePicker {
+    height: 85vh;
+    align-content: center;
+}
