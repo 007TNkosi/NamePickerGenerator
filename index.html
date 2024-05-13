@@ -46,10 +46,18 @@
                         <label for="name">Enter name</label>
                     </div>
                     <div class="form-floating">
-                        <textarea class="form-control" id="motivation" placeholder="Add comments" value="Comments" style="height: 100px" required></textarea>
+                        <textarea 
+                            class="form-control" id="motivation" placeholder="Add comments" value="Comments" style="height: 100px" required></textarea>
                         <label for="motivation">Enter motivation</label> <br>
                     </div>
-
+                    
+                    <button id="myBtn" class="btn btn-primary">Open Modal</button>
+                    <div id="myModal" class="modal">
+                      <div class="modalContent">
+                        <h3>Congratulations!</h3>
+                        <p>The lucky winner is...</p>
+                      </div>
+                    </div>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addName()">Add name</button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="pickRandom()">Pick name</button>
                 </div>

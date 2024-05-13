@@ -1,5 +1,21 @@
 var names = [];
 
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+
+document.getElementById("openModalButton").addEventListener("click", function() {
+    pickRandom();
+});
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 function addName() {
     var name = document.getElementById('name').value;
     var motivation = document.getElementById('motivation').value;
@@ -21,15 +37,14 @@ function pickRandom() {
             indices.push(randomIndex);
         }
     }
-    alert('Winner 1: ' + names[indices[0]].name + ', Motivation: ' + names[indices[0]].motivation + 
-    '\nWinner 2: ' + names[indices[1]].name + ', Motivation: ' + names[indices[1]].motivation)
-}
+    var winner1 = 'Winner 1: ' + names[indices[0]].name + ', Motivation: ' + names[indices[0]].motivation;
+    var winner2 = 'Winner 2: ' + names[indices[1]].name + ', Motivation: ' + names[indices[1]].motivation;
 
-function refreshList() {
-    if (confirm("Are you sure you want to clear?")) {
-    names = [];
-    displayNames();
-    }
+    document.getElementById('myModal').style.display = "block";
+    document.getElementById('modal-content').innerText = winner1 + '\n' + winner2;
+
+    // alert('Winner 1: ' + names[indices[0]].name + ', Motivation: ' + names[indices[0]].motivation + 
+    // '\nWinner 2: ' + names[indices[1]].name + ', Motivation: ' + names[indices[1]].motivation)
 }
 
 function displayNames() {
@@ -50,5 +65,12 @@ function displayNames() {
         cardBody.appendChild(motivationText);
         card.appendChild(cardBody);
         nameList.appendChild(card);
+    }
+}
+
+function refreshList() {
+    if (confirm("Are you sure you want to clear?")) {
+    names = [];
+    displayNames();
     }
 }
